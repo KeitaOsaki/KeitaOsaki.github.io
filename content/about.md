@@ -10,7 +10,7 @@ Goが好きな鹿児島なまりのサーバーサイドエンジニアです。
 ### 登壇
 | イベント | 開催日 | 内容 |
 |------|------|------|
-| [Go Night Talks – After Conference](https://mercari.connpass.com/event/367075/) | 2025年10月14日 | 愛用PCの不具合から始まった、Goで体感するメモリの世界 |
+| [Go Night Talks – After Conference](https://mercari.connpass.com/event/367075/) | 2025年10月14日 | [愛用PCの不具合から始まった、Goで体感するメモリの世界](https://speakerdeck.com/keitaosaki/gocon-after-party-osaki) |
 
 
 ### 経歴
