@@ -3,6 +3,8 @@ title = 'サンプルプロジェクト'
 date = 2025-11-21T21:33:55+09:00
 draft = false
 tags = ["Web開発", "React"]
+description = "サンプルプロジェクトの簡単な説明"
+image = "/images/products/sample-project.svg"
 +++
 
 ## 概要

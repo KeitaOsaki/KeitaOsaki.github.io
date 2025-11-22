@@ -1,0 +1,5 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" fill="#4A90E2"/>
+  <text x="300" y="180" font-family="Arial, sans-serif" font-size="32" fill="white" text-anchor="middle" font-weight="bold">Focus Box</text>
+  <text x="300" y="230" font-family="Arial, sans-serif" font-size="18" fill="white" text-anchor="middle">集中力管理システム</text>
+</svg>
