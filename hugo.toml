@@ -1,0 +1,67 @@
+baseURL = 'https://KeitaOsaki.github.io/'
+languageCode = 'ja'
+title = 'Portfolio'
+theme = 'coder'
+defaultContentLanguage = 'ja'
+enableEmoji = true
+
+[outputs]
+home = ["html", "rss"]
+page = ["html"]
+section = ["html", "rss"]
+taxonomy = ["html", "rss"]
+term = ["html", "rss"]
+
+[pagination]
+pagerSize = 6
+
+[markup]
+[markup.highlight]
+noClasses = false
+
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
+
+[params]
+  author = "Keita Osaki"
+  description = "Keita Osakiのポートフォリオサイト"
+  keywords = "blog,developer,portfolio"
+  info = ["Developer", "Portfolio"]
+  avatarURL = "https://github.com/KeitaOsaki.png"
+  dateFormat = "2006年1月2日"
+  colorScheme = "auto"
+  hideColorSchemeToggle = false
+  customCSS = ["css/custom.css"]
+
+[taxonomies]
+category = "categories"
+series = "series"
+tag = "tags"
+
+[[params.social]]
+name = "Github"
+icon = "fa-brands fa-github fa-2x"
+weight = 1
+url = "https://github.com/KeitaOsaki/"
+
+[[params.social]]
+name = "Wantedly"
+icon = "fa-solid fa-briefcase fa-2x"
+weight = 2
+url = "https://www.wantedly.com/id/BaseKeita"
+
+[[menu.main]]
+  name = "自己紹介"
+  url = "/about/"
+  weight = 1
+
+[[menu.main]]
+  name = "ブログ"
+  url = "/blog/"
+  weight = 2
+
+[[menu.main]]
+  name = "Products"
+  url = "/products/"
+  weight = 3

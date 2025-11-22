@@ -1,0 +1,17 @@
+/* カスタムスタイル: コンテンツの横幅を広げる */
+.container {
+  max-width: 120rem !important; /* デフォルトの90remから140rem（約1400px）に変更 */
+}
+
+/* すべての.containerバリエーションにも適用 */
+.container.centered,
+.container.page,
+.container.list {
+  max-width: 120rem !important;
+}
+
+/* トップページの.aboutコンテンツも幅いっぱいに広げる */
+.centered .about {
+  width: 100%;
+  max-width: 120rem;
+}
