@@ -24,6 +24,9 @@ noClasses = false
 unsafe = true
 
 [params]
+  [params.cloudflare]
+    token = "92aa39560d1f4d819400c48dbe6cfad7"
+
   author = "Keita Osaki"
   description = "Keita Osakiのポートフォリオサイト"
   keywords = "blog,developer,portfolio"
