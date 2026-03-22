@@ -37,6 +37,9 @@ unsafe = true
   hideColorSchemeToggle = false
   customCSS = ["css/custom.css"]
 
+  [params.cloudflare]
+    token = "92aa39560d1f4d819400c48dbe6cfad7"
+
 [taxonomies]
 category = "categories"
 series = "series"
