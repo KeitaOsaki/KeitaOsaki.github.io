@@ -1,0 +1,18 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" fill="#1a1a2e"/>
+  <!-- Roulette wheel -->
+  <circle cx="300" cy="200" r="140" fill="none" stroke="#e94560" stroke-width="4"/>
+  <!-- Wheel segments -->
+  <path d="M300,200 L300,60 A140,140 0 0,1 421,130 Z" fill="#e94560" opacity="0.8"/>
+  <path d="M300,200 L421,130 A140,140 0 0,1 421,270 Z" fill="#0f3460" opacity="0.9"/>
+  <path d="M300,200 L421,270 A140,140 0 0,1 300,340 Z" fill="#e94560" opacity="0.8"/>
+  <path d="M300,200 L300,340 A140,140 0 0,1 179,270 Z" fill="#0f3460" opacity="0.9"/>
+  <path d="M300,200 L179,270 A140,140 0 0,1 179,130 Z" fill="#e94560" opacity="0.8"/>
+  <path d="M300,200 L179,130 A140,140 0 0,1 300,60 Z" fill="#0f3460" opacity="0.9"/>
+  <!-- Center circle -->
+  <circle cx="300" cy="200" r="30" fill="#16213e" stroke="#e94560" stroke-width="3"/>
+  <!-- Pointer -->
+  <polygon points="300,42 290,68 310,68" fill="#ffd700"/>
+  <!-- Text -->
+  <text x="300" y="370" font-family="Arial, sans-serif" font-size="24" fill="white" text-anchor="middle" font-weight="bold">出来レーレット</text>
+</svg>
