@@ -1,0 +1,199 @@
+{{ define "title" }}
+  {{ title (i18n (lower .Title)) | default .Title }} · {{ .Site.Title }}
+{{ end }}
+{{ define "content" }}
+<section class="container list">
+  <header>
+    <h1 class="title">
+      <a class="title-link" href="{{ .Permalink | safeURL }}">
+        {{ title (i18n (lower .Title)) | default .Title }}
+      </a>
+    </h1>
+  </header>
+  {{ .Content }}
+
+  <!-- タグフィルター -->
+  <div class="tag-filters">
+    <button class="filter-btn active" data-tag="all">All</button>
+    {{ $allTags := slice }}
+    {{ range .Pages }}
+      {{ range .Params.tags }}
+        {{ $allTags = $allTags | append . }}
+      {{ end }}
+    {{ end }}
+    {{ range ($allTags | uniq) }}
+      <button class="filter-btn" data-tag="{{ . }}">{{ . }}</button>
+    {{ end }}
+  </div>
+
+  <ul class="posts-list">
+    {{ range .Pages }}
+      <li class="post-item" data-tags="{{ delimit .Params.tags "," }}">
+        <span class="date">{{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006") }}</span>
+        <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}</a>
+        {{ if .Params.tags }}
+          <div class="post-tags">
+            {{ range .Params.tags }}
+              <span class="post-tag">{{ . }}</span>
+            {{ end }}
+          </div>
+        {{ end }}
+      </li>
+    {{ end }}
+  </ul>
+</section>
+
+<style>
+/* タグフィルター */
+.tag-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 2rem 0;
+  padding: 1rem;
+  background: var(--filter-bg, #f8f9fa);
+  border-radius: 8px;
+}
+
+.filter-btn {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--filter-border, #ddd);
+  background: var(--filter-btn-bg, #fff);
+  color: var(--filter-btn-color, #333);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.3rem;
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  background: var(--filter-btn-hover, #e9ecef);
+  border-color: var(--filter-btn-hover-border, #999);
+}
+
+.filter-btn.active {
+  background: var(--filter-btn-active-bg, #1976d2);
+  color: var(--filter-btn-active-color, #fff);
+  border-color: var(--filter-btn-active-border, #1976d2);
+}
+
+/* ブログリスト */
+.posts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.post-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color, #e0e0e0);
+  display: flex !important;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.post-item.hidden {
+  display: none !important;
+}
+
+.post-item .date {
+  display: inline-block;
+  color: var(--secondary-text, #666);
+  font-size: 1.3rem;
+  margin-right: 1rem;
+  min-width: 8rem;
+  text-align: left !important;
+  width: auto !important;
+  flex: none !important;
+}
+
+.post-item .title {
+  font-size: 1.5rem;
+  color: var(--text-color, #212121);
+  text-decoration: none;
+  flex: none !important;
+  font-weight: 700;
+}
+
+.post-item .title:hover {
+  color: var(--link-color, #007bff);
+  text-decoration: underline;
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-left: auto;
+}
+
+.post-tag {
+  background: var(--tag-bg, #e3f2fd);
+  color: var(--tag-color, #1976d2);
+  padding: 0.05rem 0.45rem;
+  border-radius: 2px;
+  font-size: 1.2rem;
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  .tag-filters {
+    --filter-bg: #2d2d2d;
+  }
+
+  .filter-btn {
+    --filter-border: #444;
+    --filter-btn-bg: #1e1e1e;
+    --filter-btn-color: #e0e0e0;
+    --filter-btn-hover: #333;
+    --filter-btn-hover-border: #666;
+  }
+
+  .filter-btn.active {
+    --filter-btn-active-bg: #1976d2;
+    --filter-btn-active-color: #fff;
+    --filter-btn-active-border: #1976d2;
+  }
+
+  .post-item {
+    --border-color: #333;
+    --text-color: #e0e0e0;
+    --secondary-text: #b0b0b0;
+    --tag-bg: #1e3a5f;
+    --tag-color: #64b5f6;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const postItems = document.querySelectorAll('.post-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+
+      const selectedTag = this.getAttribute('data-tag');
+
+      postItems.forEach(item => {
+        const itemTags = item.getAttribute('data-tags');
+
+        if (selectedTag === 'all') {
+          item.classList.remove('hidden');
+        } else {
+          const tagsArray = itemTags ? itemTags.split(',').map(tag => tag.trim().toLowerCase()) : [];
+          if (tagsArray.includes(selectedTag.toLowerCase())) {
+            item.classList.remove('hidden');
+          } else {
+            item.classList.add('hidden');
+          }
+        }
+      });
+    });
+  });
+});
+</script>
+{{ end }}
