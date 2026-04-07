@@ -18,13 +18,6 @@ image = "images/products/tcoco.png"
 2. **質問機能** - 候補地について自由に質問
 3. **AI比較・整理** - AIが情報を整理して意思決定をサポート
 
-## 使用技術
-
-| カテゴリ | 技術 |
-|---|---|
-| フレームワーク | Next.js |
-| 言語 | TypeScript, go |
-
 ## デモ動画
 
 {{< youtube pbzmLjY2ovc >}}
@@ -32,3 +25,24 @@ image = "images/products/tcoco.png"
 ## リンク
 
 - [つぎココ](https://tcoco.hcbsix.com/)
+
+## 開発メンバー
+- kiksun
+    - [Github](https://github.com/kiksun)
+- takatakunishi
+    - [Github](https://github.com/takatakunishi)
+- KeitaOsaki
+    - [Github](https://github.com/KeitaOsaki)
+- KaitoKudou
+    - [Github](https://github.com/KaitoKudou)
+- take-2405
+    - [Github](https://github.com/take-2405)
+- zekuta-x
+    - [Github](https://github.com/zekuta-x)
+
+## 使用技術
+
+| カテゴリ | 技術 |
+|---|---|
+| フレームワーク | Next.js |
+| 言語 | TypeScript, go |
