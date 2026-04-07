@@ -2,7 +2,7 @@
 title = 'Focus Box'
 date = 2025-11-22T00:00:00+09:00
 draft = false
-tags = ["IoT", "集中力管理", "センサー", "web開発", "react", "go"]
+tags = ["IoT", "集中力管理", "センサー", "Web開発", "react", "go"]
 description = "センサと瞬き検出で集中力を計測し、休憩を促すサービス"
 image = "/images/products/focus-box.svg"
 +++
