@@ -2,6 +2,8 @@
 
 Hugoで構築したポートフォリオサイトです。
 
+https://KeitaOsaki.github.io/ でサイトが閲覧できます
+
 ## 構成
 
 - **自己紹介ページ** (`/about/`): スキルや経歴の紹介
@@ -36,28 +38,11 @@ git submodule update --init --recursive
 hugo server
 ```
 
-開発サーバーが起動したら、ブラウザで http://localhost:1313/portfolio/ にアクセスしてください。
+開発サーバーが起動したら、ブラウザで http://localhost:1313/ にアクセスしてください。
 
 ## デプロイ
 
 このサイトはGitHub Actionsを使用して自動的にGitHub Pagesにデプロイされます。
-
-### 初回デプロイ手順
-
-1. GitHubで新しいリポジトリ `portfolio` を作成
-2. リポジトリの Settings > Pages で、Source を "GitHub Actions" に設定
-3. 以下のコマンドでプッシュ:
-
-```bash
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/KeitaOsaki/portfolio.git
-git push -u origin main
-```
-
-4. GitHub Actionsが自動的にビルド・デプロイを実行します
-5. デプロイ完了後、https://KeitaOsaki.github.io/portfolio/ でサイトが閲覧できます
 
 ## コンテンツの追加
 
