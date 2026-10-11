@@ -13,7 +13,7 @@ https://KeitaOsaki.github.io/ でサイトが閲覧できます
 ## 技術スタック
 
 - [Hugo](https://gohugo.io/) - 静的サイトジェネレーター
-- [Ananke](https://github.com/theNewDynamic/gohugo-theme-ananke) - Hugoテーマ
+- [hugo-coder](https://github.com/luizdepra/hugo-coder) - Hugoテーマ
 - GitHub Pages - ホスティング
 - GitHub Actions - 自動デプロイ
 
